@@ -3,96 +3,98 @@
 <script id="create-template" type="x-tmpl-mustache">
 
   <br>      
-  <h4 class="center red-text"> Add Your Event!</h4>
+  <h4 class="center black-text"> Add Your Scores!</h4>
 
-    <form action="" id='create_form' method="POST">
-
-	<div class="section white">
 	  <div class="row">
 	  <div class="container">
-
 		    <div class="col s12">
 
-		    	<div class="col s12">
-			      	<p>Place: <span class="directions"> Ex: Flatbush Highschool Gym </span> </p>
-			      	<p>
-				        <input id="icon_prefix" type="text" name="place" class="validate">
-					</p><br>
-				</div>
+        <form action="" id='create_form' method="POST">
+            <div class="col s6 center">
+                <p>Court Number: </p>   
+                <select name="court" class="browser-default">
+                    <option value= "court1" >Court 1</option>
+                    <option value= "court2" >Court 2</option>
+                    <option value= "court3" >Court 3</option>
+                    <option value= "court4" >Court 4</option>
+                    <option value= "court5" >Court 5</option>
+                    <option value= "court6" >Court 6</option>
+                    <option value= "court7" >Court 7</option>
+                </select>
+            </div>
+            
+            <div class="col s6 center">
+                <p>Set Number: </p>   
+                <select name="set" class="browser-default">
+                    <option value= "set1" >Set 1</option>
+                    <option value= "set2" >Set 2</option>
+                    <option value= "set3" >Set 3</option>
+                    <option value= "set4" >Set 4</option>
+                </select>
+                <br><br>
+            </div>
 
-				<div class="col s12 m4 l4">
+            <div class="col s7 left">
+                <p>Player 1: </p>   
+                <select name="player1" class="browser-default">
+                    <option value= "joe" >Joe</option>
+                    <option value= "jack" >Jack</option>
+                </select>
+            </div>
 
-					<p>Address: <span class="directions"> Ex: 1400 Broadway</span> </p>
-			      	<p>
-				        <input id="icon_prefix" type="text" name="address" class="validate">
-					</p>
+	        <div class="input-field col s5">
+	        <p>Player 1 Games Won: </p>
+	          <input id="player1won" type="text" name ="player1won">
+	        </div>
 
-					<p>Date: <span class="directions"> Ex: Sunday, July 24th</span> </p>
-			      	<p>
-				        <input id="icon_prefix" type="text" name="date" class="validate">
-					</p>
-				</div>
+            <div class="col s7 left">
+                <p>Player 2: </p>   
+                <select name="player2" class="browser-default">
+                    <option value= "joe" >Joe</option>
+                    <option value= "jack" >Jack</option>
+                </select>
+            </div>
 
-		    	<div class="col s12 m4 l4">
-		      		<p>Price Level: </p>				
-					<p>
-				      <input class="with-gap" name="price" value="$" type="radio" id="$"  />
-				      <label for="$">$</label>
-				    </p>
-					<p>
-				      <input class="with-gap" name="price" value="$$" type="radio" id="$$"  />
-				      <label for="$$">$$</label>
-				    </p>
-				    <p>
-				      <input class="with-gap" name="price" value="$$$" type="radio" id="$$$"  />
-				      <label for="$$$">$$$</label>
-				    </p>
-				    <p>
-				      <input class="with-gap" name="price" value="$$$$" type="radio" id="$$$$"  />
-				      <label for="$$$$">$$$$</label>
-				    </p><br>
-				</div>
+	        <div class="input-field col s5">
+	        <p>Player 2 Games Won: </p>
+	          <input id="player2won" type="text" name ="player2won">
+	        </div>
 
-				<div class="col s12 m4 l4">
-			      	<p>Phone: <span class="directions"> Ex: 718-888-8080</span> </p>
-			      	<p>
-				        <input id="icon_prefix" type="text" name="phone" class="validate">
-					</p>
+            <div class="col s7 left">
+                <p>Player 3: </p>   
+                <select name="player3" class="browser-default">
+                    <option value= "joe" >Joe</option>
+                    <option value= "jack" >Jack</option>
+                </select>
+            </div>
 
-			      	<p>Website: <span class="directions"> Ex: http://google.com </span> </p>
-			      	<p>
-				        <input id="icon_prefix" type="text" name="website" class="validate">
-					</p>
-				</div>
+	        <div class="input-field col s5">
+	        <p>Player 3 Games Won: </p>
+	          <input id="player3won" type="text" name ="player3won">
+	        </div>
 
-				<div class="col s12 m12 l12">
-					<div class="input-field col s12">
-			      	<p>Description: <span class="materialize-textarea directions"> Ex:</span> </p>
-			      	<p>
-				        <input id="icon_prefix" type="text" name="description" class="validate">
-					</p>
-					</div>
+            <div class="col s7 left">
+                <p>Player 4: </p>   
+                <select name="player4" class="browser-default">
+                    <option value= "joe" >Joe</option>
+                    <option value= "jack" >Jack</option>
+                </select>
+            </div>
 
-				</div>
+	        <div class="input-field col s5">
+	        <p>Player 4 Games Won: </p>
+	          <input id="player4won" type="text" name ="player4won">
+	        </div>
 
-			</div>
-		</div>
+            <div class="col s2 center">    
+            <br><br>        
+                <button class="btn-large waves-effect waves-light blue right" type="submit" name="action">Submit</button>
+            </div>
+        </form>
 
-    	<div class="row">
-		<div class="container">
-			<div class="col s4"><p></p></div>
-			<div class="col s4">	
-				<br><br>
-				<button class="btn waves-effect red waves-light" type="submit" name="action">Next
-				    <i class="material-icons right">send</i>
-			    </button>
-			    <br>
-			</div>
-			<div class="col s4"><p></p></div>
-		</div>
-		</div>
-
-    </form>
+        	</div>
+        </div>
+        </div>
 
 	</script>
 {%endverbatim%}

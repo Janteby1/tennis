@@ -37,12 +37,9 @@ form {
 	font-weight: bold;
 }
 
-#index-banner {
-	height: 60vh;
-}
-
 #banner {
-	background-color: white;
+	height: 60vh;
+	background-image: url("tennis.jpg");
 	margin-left: -2em;
 }
 
@@ -125,13 +122,21 @@ footer.page-footer {
 	font-weight: bold;
 }
 
+.slider {
+	height: 50vh !important;
+}
 
-
+#spacer {
+	height: 30vh;
+}
 
 @media only screen and (max-width: 600px) {
 	.adjustable {
 	margin-top: .5em;
 }
+	#spacer {
+		height: 2vh;
+	}
 
 }
 

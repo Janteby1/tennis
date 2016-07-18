@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>MyCal  </title>
+    <title>Cypress Slam</title>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/css/materialize.min.css">
     <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}" />
@@ -21,58 +21,22 @@
 
 <body>
     <div id="nav">
-    <nav class="red">
+    <nav class="blue">
     <!-- Mobile Structure -->
     <ul class="side-nav" id="mobile-demo">
-        </li><a href="/" class="center brand-logob"> MyCal  </a></li>
-        <li><a href="#" id="add"> Add Events </a></li>
-        <li><a id="my" class="black-text text-lighten-1" href="#">My Events</a></li>
-        <li><a href="#" class="black-text" id="all"> All Events </a></li>
-        <li><a href="#" id="about"> About </a></li>
-
-            {% if user.username %}
-                <li><a id="username" href="#"> {{ user.username }}</a></li>
-                <li><a id="logout" class="black-text text-lighten-1" href="#">Logout</a></li>
-                <li><a id="add_org" class="black-text text-lighten-1" href="#">Add Organization</a></li>
-            {% else %}
-                <li><a href="#" class="black-text" id="register"> Register</a></li>
-                <li><a href="#" class="black-text" id="login"> Login</a></li>
-            {% endif %}
+        </li><a href="/" class="center brand-logob"> CypressSlam  </a></li>
+        <li><a href="#" id="add"> Add Scores </a></li>
+        <li><a id="top" href="#"> Leader Board</a></li>
     </ul>
 
     <div class="fixed-nav-wrapper">
         <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons black-text">menu</i></a>
 
         <ul id="nav-mobile" class="left hide-on-med-and-down">  
-            </li><a href="/" class="center brand-logo black-text"> MyCal  </a></li>
-            <li><a href="#" class="black-text" id="add"> Add Events </a></li>
-            <li><a id="my" class="black-text text-lighten-1" href="#">My Events</a></li>
-            <li><a href="#" class="black-text" id="all"> All Events </a></li>
-            <li><a href="#" class="black-text" id="about"> About </a></li>
-        </ul>
-
-        <ul id="nav-mobile" class="right hide-on-med-and-down">
-            {% if user.username %}
-                <li><a id="username" href="#"> {{ user.username }}</a></li>
-                <li><a id="logout" class="black-text text-lighten-1" href="#">Logout</a></li>
-                <li><a id="add_org" class="black-text text-lighten-1" href="#">Add Organization</a></li>
-            {% else %}
-                <li><a href="#" class="black-text" id="register"> Register</a></li>
-                <li><a href="#" class="black-text" id="login"> Login</a></li>
-            {% endif %}
+            </li><a href="/" class="center brand-logob"> CypressSlam  </a></li>
+            <li><a href="#" id="add"> Add Scores </a></li>
+            <li><a id="top" href="#">Leader Board</a></li>
         </ul>   
-
-        <!-- Dropdown Structure -->
-<!--         <ul id="dropdown" class="dropdown-content">
-            <li><a href="#" class="category black-text" id="user_register">User</a></li>
-            <li><a href="#" class="area black-text" id="org_register">Organization</a></li>
-        </ul>
-
-        <ul id="dropdown1" class="dropdown-content">
-            <li><a href="#" class="category black-text" id="user_login">User</a></li>
-            <li><a href="#" class="area black-text" id="org_login">Organization</a></li>
-        </ul>
- -->
         </div>
     </nav>
 </div>
