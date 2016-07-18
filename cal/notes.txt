@@ -1,0 +1,4 @@
+DONE - add rsvp button 
+DONE - filter search - need to find all user entries and use all those tags
+
+email notificiations when RSVP or when events added match your tags (use email user django built in)
