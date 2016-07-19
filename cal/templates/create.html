@@ -13,40 +13,46 @@
             <div class="col s6 center">
                 <p>Court Number: </p>   
                 <select name="court" class="browser-default">
-                    <option value= "court1" >Court 1</option>
-                    <option value= "court2" >Court 2</option>
-                    <option value= "court3" >Court 3</option>
-                    <option value= "court4" >Court 4</option>
-                    <option value= "court5" >Court 5</option>
-                    <option value= "court6" >Court 6</option>
-                    <option value= "court7" >Court 7</option>
+                    <option value= "1" >Court 1</option>
+                    <option value= "2" >Court 2</option>
+                    <option value= "3" >Court 3</option>
+                    <option value= "4" >Court 4</option>
+                    <option value= "5" >Court 5</option>
+                    <option value= "6" >Court 6</option>
+                    <option value= "7" >Court 7</option>
                 </select>
             </div>
             
             <div class="col s6 center">
                 <p>Set Number: </p>   
                 <select name="set" class="browser-default">
-                    <option value= "set1" >Set 1</option>
-                    <option value= "set2" >Set 2</option>
-                    <option value= "set3" >Set 3</option>
-                    <option value= "set4" >Set 4</option>
+                    <option value= "1" >Set 1</option>
+                    <option value= "2" >Set 2</option>
+                    <option value= "3" >Set 3</option>
+                    <option value= "4" >Set 4</option>
                 </select>
                 <br><br>
             </div>
 
-            <div class="col s7 left">
-                <p>Player 1: </p>   
-                <select name="player1" class="browser-default">
-                    <option value= "joe" >Joe</option>
-                    <option value= "jack" >Jack</option>
+            <div class="col s5 left">
+                <p>Player: </p>   
+                <select name="player" class="browser-default">
+                    <option value= "Joe" >Joe</option>
+                    <option value= "Jack" >Jack</option>
                 </select>
             </div>
 
-	        <div class="input-field col s5">
-	        <p>Player 1 Games Won: </p>
-	          <input id="player1won" type="text" name ="player1won">
+	        <div class="input-field col s3">
+	        <p>Games Won: </p>
+	          <input id="playerwon" type="text" name ="playerwon">
 	        </div>
 
+	        <div class="input-field col s3">
+	        <p>Games Lost: </p>
+	          <input id="playerloss" type="text" name ="playerloss">
+	        </div>
+
+	        <!--
             <div class="col s7 left">
                 <p>Player 2: </p>   
                 <select name="player2" class="browser-default">
@@ -85,10 +91,11 @@
 	        <p>Player 4 Games Won: </p>
 	          <input id="player4won" type="text" name ="player4won">
 	        </div>
+	        -->
 
             <div class="col s2 center">    
             <br><br>        
-                <button class="btn-large waves-effect waves-light blue right" type="submit" name="action">Submit</button>
+                <button class="btn-large waves-effect waves-light blue center" type="submit" name="action">Submit</button>
             </div>
         </form>
 

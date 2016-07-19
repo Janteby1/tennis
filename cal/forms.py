@@ -6,13 +6,14 @@ from .models import Scores
 
 class AddScoresForm(forms.ModelForm):
     player = forms.CharField() # get the input directly from the user
-    court = forms.CharField() # get the input directly from the user
-    won = forms.CharField() # get the input directly from the user
-    loss = forms.CharField() # get the input directly from the user
+    court = forms.IntegerField() # get the input directly from the user
+    playerwon = forms.IntegerField() # get the input directly from the user
+    playerloss = forms.IntegerField() # get the input directly from the user
+    set = forms.IntegerField() # get the input directly from the user
 
     class Meta:
         model = Scores
         fields = [
-            'player','court','won', 'loss',
+            'court','set','player', 'playerwon', 'playerloss',
         ]
 

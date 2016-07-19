@@ -8,8 +8,9 @@ from django.contrib.contenttypes.models import ContentType
 class Scores(models.Model):
     player = models.CharField (max_length=120)
     court = models.IntegerField(default = 0)
-    won = models.IntegerField(default = 0)
-    loss = models.IntegerField(default = 0)
+    playerwon = models.IntegerField(default = 0)
+    playerloss = models.IntegerField(default = 0)
+    set = models.IntegerField(default = 0)
     created_at = models.DateTimeField(default = timezone.now, editable=False)
     show = models.BooleanField(default=True)
 
@@ -18,8 +19,8 @@ class Scores(models.Model):
             "id": self.id,
             "player": self.player,
             "court": self.court,
-            "won": self.won,
-            "loss": self.loss,
+            "playerwon": self.playerwon,
+            "playerloss": self.playerloss,
             "created_at": self.created_at,
             "show": self.show,
         }

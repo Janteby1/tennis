@@ -28,28 +28,41 @@ class Index(View):
 
 class AddScore(View):
 	def post(self, request):
-		pass
-	# 	# checks to make sure the user is logged in 
-	# 	if request.user.is_authenticated():
-	# 		form = AddEventForm(request.POST)
-	# 		form.is_valid()
-	# 		# add the user to each post 
-	# 		user = request.user
-	# 		event = form.save(commit=False)
-	# 		event.creator = user
-	# 		event.save()
-	# 		return JsonResponse({"Message":"added event", "success": True, "id": event.id})
-	# 	else:
-	# 		return JsonResponse({"success": False})
+		# checks to make sure the user is logged in 
+		form = AddScoresForm(request.POST)
+		form.is_valid()
+		# add the user to each post 
+		# user = request.user
+		score = form.save(commit=False)
+		# event.creator = user
+		score.save()
+
+		if score:
+			return JsonResponse({"Message":"added score", "success": True, "id": score.id})
+		else:
+			return JsonResponse({"success": False})
 
 
 class ViewTop(View):
 	def get(self, request):
-		pass
-	# 	# this line gets the top 25 events that we have in the db and orders them by top votes
-	# 	events = Events.objects.filter(show=True).order_by('-created_at')[:25]
-	# 	# put all the values into a json dictionary with a method called from the models
-	# 	events = [event.to_json() for event in events]
-	# 	# print (events)
-	# 	return JsonResponse({"success": True, 'results': events})
+		# this line gets the top 50 scores that we have in the db and orders them by top wins
+		scores = Scores.objects.filter(show=True).order_by('-playerwon').order_by('playerloss')[:50]
+		# put all the values into a json dictionary with a method called from the models
+		scores = [score.to_json() for score in scores]
+		return JsonResponse({"success": True, 'results': scores})
+
+
+class DeleteScore(View):
+	def post(self, request, score_id=None):
+		score = Scores.objects.get(id=score_id)
+
+		if score:
+			score.show = False
+			score.save()
+			return JsonResponse({"success": True})
+		else:
+			return JsonResponse({"success": False})
+
+
+
 

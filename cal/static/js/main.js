@@ -26,7 +26,7 @@ $(document).ready(function(){
         $('#answer_div').html(renderM);  
         window.scrollTo(0, 0);
     });
-    
+
 
     $('#answer_div').on('submit', '#create_form',function(event){
     event.preventDefault();
@@ -107,6 +107,37 @@ $(document).ready(function(){
         });
     });
 
+//// Delete Button ////
+    $('#answer_div').on('submit', ".delete_button_form", function(event){
+    event.preventDefault();
+
+    var check = confirm("Are you sure you want to delete this event?");
+
+    if (check == true) {
+        var score_id = ($(this).find("[name='delete_id']").attr("value")); // find tells it where in the this object to look for the value
+
+        $.ajax({
+            method: "POST",
+            url: ("delete/" + score_id),
+            // data: query_string,
+        }).done(function(data, status){
+
+            if (data.success){
+                ////// if answers came back ////////
+                alert("Ok, Event Deleted \nRefresh page to see updated results");
+                window.scrollTo(0, 0);
+            } else {
+                var template = $('#403-template').html();
+                var renderM = Mustache.render(template);
+                $('#answer_div').html(renderM);  
+                window.scrollTo(0, 0);
+            }
+            });
+
+    } else {
+        alert("Ok, Event will be kept");
+    }
+});
 
     
 

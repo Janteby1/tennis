@@ -4,7 +4,7 @@
     <script id="results-template" type="x-tmpl-mustache/template">
 
   <br>      
-  <h4 class="center red-text"> All Events</h4>
+  <h4 class="center black-text"> Leader Board</h4>
 
 <div class="ja_results">
 	
@@ -18,82 +18,28 @@
 			<div class="row">
 				<div class="col s12 m4 l4">
 					<br>
-		       		<div class="card-title red-text" id="bigger">{{ place }}<br></div>
-	       			<br>
-	       			<div class="entry"><strong>Organization Admin: </strong>{{ creator_name }}</div>
-			        <div class="entry"><strong>Address: </strong>{{ address }}</div>
+		       		<div class="card-title blue-text" id="bigger">{{ player }}<br></div>
 				</div>
 
 				<div class="col s12 m4 l4">
-					<div class="adjustable">
-				        <div class="entry"><strong>Date: </strong>{{ date }}</div>
-				        <div class="entry"><strong>Price Level: </strong>{{ price }}</div>
-				        <div class="entry"><strong>Phone: </strong>{{ phone }}</div>
-					</div>
+						<br>
+						<div class="entry"><strong>Games Won: </strong>{{ playerwon }}</div>
 				</div>	
 				
-
 				<div class="col s12 m4 l4">
-					<div class="adjustable">
-						<div class="entry"><strong>Website: </strong>{{ website }}</div>
-				        <div class="entry"><strong>Description: </strong>{{ description }}</div>
+						<br>
+				        <div class="entry"><strong>Games Lost: </strong>{{ playerloss }}</div>
 			        {% endverbatim %}
 					</div>
-				</div>	
 
-
-				{% verbatim %}
-				<div class="col s12 m7 l7">
-					<div class="map_div" id= "{{id}}">
-	                    <!-- this is where everything from mustache will render -->
-	                </div>
-				</div>	
-			    {% endverbatim %}
-
-				<div class="col s12 m12 l12">
-
-		        	{% verbatim %}
-                    <form action="" class='inline vote_up_button_form'>
-	                    <input type="hidden" name= "vote_id" value="{{id}}">
-
-	                    <button id="vote_up_button" class="space btn waves-effect waves-light blue-text z-depth-0 hover"  type="submit" name="vote"><i id="thumbs_up" class="material-icons right">thumb_up</i></button>
-                    </form>
-		        	{% endverbatim %}
-
-		        	{% verbatim %}
-		        	{{ vote }}
-		        	{% endverbatim %}
-
-		        	{% verbatim %}
-                    <form action="" class='inline vote_down_button_form'>
-	                    <input type="hidden" name= "vote_id" value="{{id}}">
-
-	                    <button id="vote_down_button" class="space btn waves-effect waves-light blue-text z-depth-0 hover"  type="submit" name="vote"><i id="thumbs_down" class="material-icons right">thumb_down</i></button>
-                    </form>
-		        	{% endverbatim %}
-
-		        	{% verbatim %}
-		        	<span class="right rsvp">{{ rsvp }}</span>
-		        	{% endverbatim %}
-
-		        	{% verbatim %}
-                    <form action="" class='inline right rsvp_button_form'>
-	                    <input type="hidden" name= "rsvp_id" value="{{id}}">
-
-	                    <button id="rsvp_button" class="rsvp_btn btn waves-effect waves-light red-text z-depth-0 hover"  type="submit" name="rsvp">RSVP</button>
-                    </form>
-		        	{% endverbatim %}
-
-		        	{% verbatim %}
-                    <form action="" class='inline right delete_button_form'>
+					{% verbatim %}
+	                <form action="" class='inline right delete_button_form'>
 	                    <input type="hidden" name= "delete_id" value="{{id}}">
 
 	                    <button id="delete_button" class="space btn waves-effect waves-light red-text z-depth-0 hover"  type="submit" name="delete"><i id="trash" class="material-icons right">delete</i></button>
-                    </form>
+	                </form>
 		        	{% endverbatim %}
-		        	<br><br>
-
-				</div>
+				</div>	
 
 				</div>	
 			</div>
@@ -118,7 +64,7 @@
 
 	<div class="row center"> 
         <br>
-            <a href="#" id="create_button" class="btn waves-effect waves-light red" type="submit" name="action">Create New Event</a>
+            <a href="#" id="add" class="btn waves-effect waves-light blue" type="submit" name="action">Add New Score</a>
         <br><br>  
     </div>
 
