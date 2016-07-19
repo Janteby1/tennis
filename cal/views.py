@@ -19,7 +19,6 @@ from .models import Scores
 class Index(View):
 	def get(self, request):
 		add_score_form = AddScoresForm()
-
 		context = {
 			'add_score_form': add_score_form,
 		}
@@ -28,13 +27,9 @@ class Index(View):
 
 class AddScore(View):
 	def post(self, request):
-		# checks to make sure the user is logged in 
 		form = AddScoresForm(request.POST)
 		form.is_valid()
-		# add the user to each post 
-		# user = request.user
 		score = form.save(commit=False)
-		# event.creator = user
 		score.save()
 
 		if score:
