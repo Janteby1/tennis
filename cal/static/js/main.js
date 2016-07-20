@@ -56,9 +56,8 @@ $(document).ready(function(){
         });
     });
 
-
 ///// View All /////
-    $('#nav').on('click', "#top", function(event){
+    $('#answer_div').on('click', "#all", function(event){
     event.preventDefault();
 
     $.ajax({
@@ -68,7 +67,7 @@ $(document).ready(function(){
     }).done(function(data, status){
 
     if (data.success){
-        var template = $('#results-template').html();
+        var template = $('#results-all-template').html();
         var renderM = Mustache.render(template, {"results":data.results});
         $('#answer_div').html(renderM);  
         window.scrollTo(0, 0);
@@ -82,7 +81,8 @@ $(document).ready(function(){
         });
     });
 
-///// View All /////
+
+///// View Top /////
     $('#answer_div').on('click', "#top", function(event){
     event.preventDefault();
 
@@ -107,37 +107,64 @@ $(document).ready(function(){
         });
     });
 
-//// Delete Button ////
-    $('#answer_div').on('submit', ".delete_button_form", function(event){
+
+///// View Top /////
+    $('#nav').on('click', "#top", function(event){
     event.preventDefault();
 
-    var check = confirm("Are you sure you want to delete this event?");
+    $.ajax({
+        method: "GET",
+        url: "top",
+        // data: query_string,
+    }).done(function(data, status){
 
-    if (check == true) {
-        var score_id = ($(this).find("[name='delete_id']").attr("value")); // find tells it where in the this object to look for the value
-
-        $.ajax({
-            method: "POST",
-            url: ("delete/" + score_id),
-            // data: query_string,
-        }).done(function(data, status){
-
-            if (data.success){
-                ////// if answers came back ////////
-                alert("Ok, Event Deleted \nRefresh page to see updated results");
-                window.scrollTo(0, 0);
-            } else {
-                var template = $('#403-template').html();
-                var renderM = Mustache.render(template);
-                $('#answer_div').html(renderM);  
-                window.scrollTo(0, 0);
+    if (data.success){
+        var template = $('#results-template').html();
+        var renderM = Mustache.render(template, {"results":data.results});
+        $('#answer_div').html(renderM);  
+        window.scrollTo(0, 0);
+        }
+    else {
+        var template = $('#403-template').html();
+        var renderM = Mustache.render(template);
+        $('#answer_div').html(renderM);  
+        window.scrollTo(0, 0);
             }
-            });
+        });
+    });
 
-    } else {
-        alert("Ok, Event will be kept");
-    }
-});
+
+// //// Delete Button ////
+//     $('#answer_div').on('submit', ".delete_button_form", function(event){
+//     event.preventDefault();
+
+//     var check = confirm("Are you sure you want to delete this event?");
+
+//     if (check == true) {
+//         var score_id = ($(this).find("[name='delete_id']").attr("value")); // find tells it where in the this object to look for the value
+
+//         $.ajax({
+//             method: "POST",
+//             url: ("delete/" + score_id),
+//             // data: query_string,
+//         }).done(function(data, status){
+
+//             if (data.success){
+//                 ////// if answers came back ////////
+//                 alert("Ok, Event Deleted \nRefresh page to see updated results");
+//                 window.scrollTo(0, 0);
+//             } else {
+//                 var template = $('#403-template').html();
+//                 var renderM = Mustache.render(template);
+//                 $('#answer_div').html(renderM);  
+//                 window.scrollTo(0, 0);
+//             }
+//             });
+
+//     } else {
+//         alert("Ok, Event will be kept");
+//     }
+// });
 
     
 
