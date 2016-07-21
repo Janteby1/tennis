@@ -62,7 +62,7 @@ class AddScore(View):
 class ViewTop(View):
 	def get(self, request):
 		# this line gets the top 50 scores that we have in the db and orders them by top wins
-		scores = Scores.objects.filter(show=True).order_by('playerloss').order_by('-playerwon')[:50]
+		scores = Scores.objects.filter(show=True).order_by('-playerwon').order_by('playerloss')[:50]
 		# put all the values into a json dictionary with a method called from the models
 		scores = [score.to_json() for score in scores]
 		return JsonResponse({"success": True, 'results': scores})
@@ -77,15 +77,29 @@ class ViewAll(View):
 		return JsonResponse({"success": True, 'results': scores})
 
 
-class DeleteScore(View):
-	def post(self, request, score_id=None):
-		score = Scores.objects.get(id=score_id)
+class EditScore(View):
+	def post(self, request):
+		if request.is_ajax():
+			data = request.POST
+		else:
+			body = request.body.decode()
+			if not body: 
+				return JsonResponse ({"response":"Missing Body"})
+			data = json.loads(body)
 
-		if score:
-			score.show = False
+		player = data["player"]
+		won = int(data["playerwon"])
+		loss = int(data["playerloss"])
+		print (player)
+
+
+		try:
+			score = Scores.objects.get(player=player)
+			score.playerwon += won
+			score.playerloss += loss
 			score.save()
 			return JsonResponse({"success": True})
-		else:
+		except:
 			return JsonResponse({"success": False})
 
 

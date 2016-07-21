@@ -62,6 +62,16 @@ footer.page-footer {
 	font-size: 2.5em;
 }
 
+.clear {
+	background-color: transparent;
+	color: red;
+}
+
+.clear:hover {
+	background-color: transparent;
+	color: red;
+}
+
 .inline {
 	display: inline;
 }

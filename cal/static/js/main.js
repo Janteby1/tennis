@@ -133,38 +133,84 @@ $(document).ready(function(){
         });
     });
 
+///// Edit /////
+    $('#answer_div').on('click', "#edit_button", function(event){
+        event.preventDefault();
 
-// //// Delete Button ////
-//     $('#answer_div').on('submit', ".delete_button_form", function(event){
-//     event.preventDefault();
+        var template = $('#edit-template').html();
+        var renderM = Mustache.render(template);
+        $('#answer_div').html(renderM);  
+        window.scrollTo(0, 0);
+    });
 
-//     var check = confirm("Are you sure you want to delete this event?");
 
-//     if (check == true) {
-//         var score_id = ($(this).find("[name='delete_id']").attr("value")); // find tells it where in the this object to look for the value
+    $('#answer_div').on('submit', '#edit_form',function(event){
+    event.preventDefault();
 
-//         $.ajax({
-//             method: "POST",
-//             url: ("delete/" + score_id),
-//             // data: query_string,
-//         }).done(function(data, status){
+    var check = confirm("Are you sure you want to edit or change this score?");
 
-//             if (data.success){
-//                 ////// if answers came back ////////
-//                 alert("Ok, Event Deleted \nRefresh page to see updated results");
-//                 window.scrollTo(0, 0);
-//             } else {
-//                 var template = $('#403-template').html();
-//                 var renderM = Mustache.render(template);
-//                 $('#answer_div').html(renderM);  
-//                 window.scrollTo(0, 0);
-//             }
-//             });
+    if (check == true) {
+        var query_string = $(this).serialize() //returns all the data in your form
+        console.log(query_string)
 
-//     } else {
-//         alert("Ok, Event will be kept");
-//     }
-// });
+    $.ajax({
+        method: "POST",
+        url: "edit",
+        data: query_string,
+    }).done(function(data, status){
+
+    if (data.success){
+        console.log(data.Message)
+        var template = $('#thanx-template').html();
+        var renderM = Mustache.render(template);
+        $('#answer_div').html(renderM);  
+        window.scrollTo(0, 0);
+        }
+    else {
+        var template = $('#403-template').html();
+        var renderM = Mustache.render(template);
+        $('#answer_div').html(renderM);  
+        window.scrollTo(0, 0);
+            }
+        });
+    } else {
+        alert("Ok, Score will be kept");
+    }
+});
+
+
+
+//// Edit Button ////
+    $('#answer_div').on('submit', ".edit_button_form", function(event){
+    event.preventDefault();
+
+    var check = confirm("Are you sure you want to edit or change this score?");
+
+    if (check == true) {
+        var score_id = ($(this).find("[name='edit_id']").attr("value")); // find tells it where in the this object to look for the value
+
+        $.ajax({
+            method: "POST",
+            url: ("edit/" + score_id),
+            data: query_string,
+        }).done(function(data, status){
+
+            if (data.success){
+                ////// if answers came back ////////
+                alert("Ok, Score Changed \nRefresh page to see updated results");
+                window.scrollTo(0, 0);
+            } else {
+                var template = $('#403-template').html();
+                var renderM = Mustache.render(template);
+                $('#answer_div').html(renderM);  
+                window.scrollTo(0, 0);
+            }
+            });
+
+    } else {
+        alert("Ok, Score will be kept");
+    }
+});
 
     
 

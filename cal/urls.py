@@ -7,5 +7,5 @@ urlpatterns = [
     url(r'^add$', views.AddScore.as_view(), name='add'),
     url(r'^top$', views.ViewTop.as_view(), name='top'),
     url(r'^all$', views.ViewAll.as_view(), name='all'),
-    url(r'^delete/(?P<score_id>[A-Za-z0-9\-\_]+)$', views.DeleteScore.as_view(), name='delete'),
+    url(r'^edit$', views.EditScore.as_view(), name='edit'),
 ]

@@ -1,46 +1,18 @@
 {%verbatim%}
 
-<script id="create-template" type="x-tmpl-mustache">
+<script id="edit-template" type="x-tmpl-mustache">
 
   <br>      
-  <h2 class="center black-text"> Add Your Scores!</h2>
+  <h2 class="center black-text"> Edit Your Scores!</h2>
 
 	  <div class="row">
 	  <div class="container">
 		    <div class="col s12">
 
-        <form action="" id='create_form' method="POST">{%endverbatim%}
+        <form action="" id='edit_form' method="POST">{%endverbatim%}
         {% csrf_token %}
 
         {%verbatim%}
-            <div class="col s10 center">
-                <p>Round Number: </p>   
-                <select name="round" class="browser-default">
-                    <option value= "1" >Round 1</option>
-                    <option value= "2" >Round 2</option>
-                </select>
-            </div>
-
-            <div class="col s10 center">
-                <p>Court Number: </p>   
-                <select name="court" class="browser-default">
-                    <option value= "1" >Court 1</option>
-                    <option value= "2" >Court 2</option>
-                    <option value= "3" >Court 3</option>
-                    <option value= "4" >Court 4</option>
-                    <option value= "5" >Court 5</option>
-                </select>
-            </div>
-            
-            <div class="col s10 center">
-                <p>Set Number: </p>   
-                <select name="set" class="browser-default">
-                    <option value= "1" >Set 1</option>
-                    <option value= "2" >Set 2</option>
-                    <option value= "3" >Set 3</option>
-                </select>
-                <br>
-            </div>
 
             <div class="col s10 left">
                 <p>Player: </p>   
@@ -71,32 +43,42 @@
             </div>
 
             <div class="col s5 center">
-                <p>Games Won: </p>   
+                <p>Add Games Won: </p>   
                 <select name="playerwon" class="browser-default">
-                    <option value= "0" >0 Wins</option>
-                    <option value= "1" >1 Win</option>
-                    <option value= "2" >2 Wins</option>
-                    <option value= "3" >3 Wins</option>
-                    <option value= "4" >4 Wins</option>
+                    <option value= "0" >0 </option>
+                    <option value= "1" >1 </option>
+                    <option value= "2" >2 </option>
+                    <option value= "3" >3 </option>
+                    <option value= "4" >4 </option>
+                    <option value= "5" >5 </option>
+                    <option value= "6" >6 </option>
+                    <option value= "7" >7 </option>
+                    <option value= "8" >8 </option>
+                    <option value= "9" >9 </option>
                 </select>
                 <br><br>
             </div>
 
             <div class="col s5 center">
-                <p>Games Lost: </p>   
+                <p>Add Games Lost: </p>   
                 <select name="playerloss" class="browser-default">
-                    <option value= "0" >0 Losses</option>
-                    <option value= "1" >1 Loss</option>
-                    <option value= "2" >2 Losses</option>
-                    <option value= "3" >3 Losses</option>
-                    <option value= "4" >4 Losses</option>        
+                    <option value= "0" >0 </option>
+                    <option value= "1" >1 </option>
+                    <option value= "2" >2 </option>
+                    <option value= "3" >3 </option>
+                    <option value= "4" >4 </option>
+                    <option value= "5" >5 </option>
+                    <option value= "6" >6 </option>
+                    <option value= "7" >7 </option>
+                    <option value= "8" >8 </option>
+                    <option value= "9" >9 </option>
                 </select>
                 <br><br>
             </div>
 
             <div class="col s5 center">    
             <br><br>        
-                <button class="btn-large waves-effect waves-light blue center" type="submit" name="action">Submit</button>
+                <button class="btn-large waves-effect waves-light blue center" type="submit" name="action">Submit Edits</button>
             </div>
         </form>
 
