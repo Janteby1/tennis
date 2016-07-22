@@ -7,7 +7,7 @@
 }
 
 .parallax-container {
-	height: 50vh;
+	height: 60vh;
 	margin-left: -3em; 
 	margin-right: -3em;
 }
@@ -38,7 +38,7 @@ form {
 }
 
 #banner {
-	height: 75vh;
+	height: 60vh;
 	background-image: url("tennis.jpg");
 	margin-left: -2em;
 }
