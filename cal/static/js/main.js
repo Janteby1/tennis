@@ -62,7 +62,7 @@ $(document).ready(function(){
 
     $.ajax({
         method: "GET",
-        url: "top",
+        url: "all",
         // data: query_string,
     }).done(function(data, status){
 
