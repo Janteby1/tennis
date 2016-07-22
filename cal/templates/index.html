@@ -15,10 +15,14 @@
                 <div id="spacer"> </div>
                 <a href="#" id="add" class="btn-large waves-effect waves-light blue space" type="submit" name="action">Add Scores</a>
                 <a href="#" id="top" class="btn-large waves-effect waves-light blue space" type="submit" name="action">View Leader Board</a>
-
+                <br><br>
+                <a href="#" id="round1" class="btn-large waves-effect waves-light blue space" type="submit" name="action">View Round 1</a>
+                <a href="#" id="round2" class="btn-large waves-effect waves-light blue space" type="submit" name="action">View Round 2</a>
+                <br><br><br>
+                <a href="#" id="rules" class="btn-large waves-effect waves-light blue space" type="submit" name="action">Rules</a>
             </div>
+                <br><br><br><br>
         </div>
-
     </div>
 
 {% endblock content %}
@@ -27,7 +31,7 @@
 <footer class="page-footer blue">
 
     <div class="container" id="footer">
-        
+
     <div class="footer-copyright">
         <div class="container">
             <div class="row align left">
@@ -51,6 +55,9 @@
     {% include "results.html"%}
     {% include "results_all.html"%}
     {% include "edit.html"%}
+    {% include "round1.html"%}
+    {% include "round2.html"%}
+    {% include "rules.html"%}
 
 {% endblock templates %}
 

@@ -214,4 +214,63 @@ $(document).ready(function(){
 
     
 
+//// Round 1 ////
+    $('#answer_div').on('click', "#round1", function(event){
+        event.preventDefault();
+
+        var template = $('#round1-template').html();
+        var renderM = Mustache.render(template);
+        $('#answer_div').html(renderM);  
+        window.scrollTo(0, 0);
+    });
+
+    $('#nav').on('click', "#round1", function(event){
+        event.preventDefault();
+
+        var template = $('#round1-template').html();
+        var renderM = Mustache.render(template);
+        $('#answer_div').html(renderM);  
+        window.scrollTo(0, 0);
+    });
+
+//// Round 2 ////
+    $('#answer_div').on('click', "#round2", function(event){
+        event.preventDefault();
+
+        var template = $('#round2-template').html();
+        var renderM = Mustache.render(template);
+        $('#answer_div').html(renderM);  
+        window.scrollTo(0, 0);
+    });
+
+    $('#nav').on('click', "#round2", function(event){
+        event.preventDefault();
+
+        var template = $('#round2-template').html();
+        var renderM = Mustache.render(template);
+        $('#answer_div').html(renderM);  
+        window.scrollTo(0, 0);
+    });
+
+
+//// Rules ////
+    $('#answer_div').on('click', "#rules", function(event){
+        event.preventDefault();
+
+        var template = $('#rules-template').html();
+        var renderM = Mustache.render(template);
+        $('#answer_div').html(renderM);  
+        window.scrollTo(0, 0);
+    });
+
+    $('#nav').on('click', "#rules", function(event){
+        event.preventDefault();
+
+        var template = $('#rules-template').html();
+        var renderM = Mustache.render(template);
+        $('#answer_div').html(renderM);  
+        window.scrollTo(0, 0);
+    });
+
+
 });
