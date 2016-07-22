@@ -69,7 +69,7 @@ class AddScore(View):
 class ViewTop(View):
 	def get(self, request):
 		# this line gets the top 50 scores that we have in the db and orders them by top wins
-		scores = Scores.objects.filter(show=True).order_by('playerloss').order_by('-playerwon')[:50]
+		scores = Scores.objects.filter(show=True).order_by('playerloss').order_by('-playerwon')
 		# put all the values into a json dictionary with a method called from the models
 		scores = [score.to_json() for score in scores]
 		return JsonResponse({"success": True, 'results': scores})
@@ -78,7 +78,7 @@ class ViewTop(View):
 class ViewAll(View):
 	def get(self, request):
 		# this line gets the top 50 scores that we have in the db and orders them by top wins
-		games = Games.objects.filter(show=True).order_by('playerloss').order_by('-playerwon')[:50]
+		games = Games.objects.filter(show=True).order_by('player')
 		# put all the values into a json dictionary with a method called from the models
 		games = [game.to_json() for game in games]
 		return JsonResponse({"success": True, 'results': games})
